@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    setlocale(0, "Russian");
+    int A;
+
+    cout << "Введите число от 0 до 9: ";
+    cin >> A;
+
+    string x[]={"Ноль","Один","Два","Три","Четыре","Пять","Шесть","Семь","Восемь","Девять"};
+
+    cout<<"ваще число:"<<"\t"<<x[A];
+    return 0;
+}
