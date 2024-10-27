@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a = 1;
+
+    while ( a <997){
+        a = a + 4;
+        if (a%7 == 0) {
+            cout << a << "\n";
+        }
+    }
+
+    return 0;
+}
