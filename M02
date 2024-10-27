@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath> // Для использования функции tan
+
+using namespace std;
+
+// Функция для вычисления площади N-угольника
+double get_square(double A, int N) {
+    // Площадь N-угольника
+    return (N * A * A) / (4 * tan(180 / N));
+}
+
+int main() {
+    setlocale(0,"Russian");
+    double A;
+    int N;
+
+    // Ввод данных
+    cout << "Введите длину стороны A: ";
+    cin >> A;
+    cout << "Введите количество сторон N: ";
+    cin >> N;
+
+    // Вычисление площади
+    double S = get_square(A, N);
+
+    cout << "Площадь " << N << "-угольника со стороной " << A << ": " << S << endl;
+
+
+    return 0;
+}
