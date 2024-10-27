@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "Russian");
+    int A, B;
+
+    // Ввод чисел A и B
+    cout << "Введите число A: ";
+    cin >> A;
+    cout << "Введите число B (B > A): ";
+    cin >> B;
+
+    // Открытие файла для записи
+    ofstream outFile("output.txt");
+
+
+    // Цикл от A до B
+    for (int i = A; i <= B; ++i) {
+        outFile << i * 3 << endl;  // Записываем в файл, умножая на 3
+    }
+
+    // Закрытие файла
+    outFile.close();
+
+    cout << "Данные успешно записаны в файл output.txt." << endl;
+
+    return 0;
+}
