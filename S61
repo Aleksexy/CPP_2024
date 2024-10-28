@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+class Bucket {
+
+private:
+    double volume; // Объем ведра в литрах
+    double used;   // Объем, который уже налит в ведре
+
+public:
+
+    Bucket(double vol) : volume(vol), used(0) {}
+
+    // Метод для опустошения ведра
+    void flush() {
+        used = 0;
+        cout << "Ведро опустошено. Доступный объем: " << volume << " литров." << endl;
+    }
+
+    // Метод для наполнения ведра
+    double fill(double v) {
+        if (used + v <= volume) {
+            used += v;
+            cout << "Ведро наполнено " << v << " литрами. Текущий объем: " << used << " литров." << endl;
+            return 0; 
+        } else {
+            double raz = volume - used;
+            used = volume; 
+            cout << "Ведро заполнено до максимума. Текущий объем: " << used << " литров."<<" Не поместилось: "<<v - raz <<" литров."<< endl;
+            return 0; 
+        }
+    }
+
+};
+
+int main() {
+    
+    setlocale(0,"Russian");
+    
+    Bucket bucket(10); 
+
+    // Примеры использования
+    bucket.fill(5);    // Наполняем ведро 5 литрами
+    bucket.fill(7);    // Пытаемся налить еще 7 литров
+    bucket.flush();     // Опустошаем ведро
+    bucket.fill(3);    // Наполняем ведро 3 литрами
+
+    return 0;
+}
