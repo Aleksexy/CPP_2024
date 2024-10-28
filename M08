@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath> // Для использования acos
+
+using namespace std;
+
+double get_angle(double a, double b, double c) {
+    
+    // Проверка на корректность значений аргументов
+    if (a <= 0 || b <= 0 || c <= 0) {
+        cout<< "Ошибка: длины сторон должны быть больше 0." << endl;
+        
+        return -1; // Возврат неверного значения в случае ошибки
+    }
+
+    // Вычисление угла по закону косинусов
+    double cosC = (b * b + c * c - a * a) / (2 * c * b);
+
+
+    // Вычисление угла в радианах
+    double angle_rad = acos(cosC);
+
+    // Преобразование радиан в градусы
+    double angle_deg = angle_rad * (180 / 3.1415926535);
+
+    return angle_deg;
+}
+
+int main() {
+    setlocale(0,"Russian");
+    
+    double a, b, c;
+
+    cout << "Введите длину первой стороны (a): ";
+    cin >> a;
+    cout << "Введите длину второй стороны (b): ";
+    cin >> b;
+    cout << "Введите длину третьей стороны (c): ";
+    cin >> c;
+
+    double angle = get_angle(a, b, c);
+
+    if (angle >= 0) {
+        cout << "Угол напротив первой стороны: " << angle << " градусов." << endl;
+    }
+
+    return 0;
+}
