@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+squared_sum(int a,int b){
+
+int h;
+h = (a+b)*(a+b);
+
+return h;
+}
+
+int main(){
+
+    int a,b;
+    setlocale(0,"Russian");
+
+    cout << "Введите a: ";
+    cin >> a;
+    cout << "Введите b: ";
+    cin >> b;
+
+    cout <<"Квадат суммы a и b:"<< squared_sum(a,b);
+    return 0;
+}
